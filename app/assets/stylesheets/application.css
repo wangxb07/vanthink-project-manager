@@ -1,0 +1,241 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+/**
+ * reset
+ */
+html, body {
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+}
+body {
+    color: #222222; /* TODO 修改颜色 */
+    font-family: "Helvetica Neue",Helvetica,Tahoma,Verdana,Arial,sans-serif;
+    font-size: 75%;
+    line-height: 1.5;
+    margin: 0px;
+}
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, code, del, dfn, em, img, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, hr {
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+th {
+    padding: 0;
+    text-align: left;
+    vertical-align: top;
+}
+a {
+    color: #EA7601; /* TODO 修改颜色 */
+    text-decoration: underline;
+    font-weight: bold;
+}
+a:hover {
+    color: #EA7601; /* TODO 修改颜色 */
+    text-decoration: underline;
+}
+a img {
+    border: 0 none;
+}
+:focus {
+    outline: 0 none;
+}
+
+/**
+ * base stylesheet
+ */
+.lf {
+    float: left;
+    display: inline;
+}
+.clearfix::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+/**
+ * wrapper
+ */
+.wrapper {
+
+}
+
+/**
+ * header
+ */
+.header .menu li {
+    padding: 0 8px;
+    height: 34px;
+    line-height: 34px;
+}
+.nav a, .nav a:visited {
+    color: #FFFFFF;
+    display: block;
+    text-decoration: none;
+}
+.nav a:hover {
+    color: #f95901;
+    text-decoration: none;
+}
+.header {
+/*    height: auto; */
+}
+.nav {
+    background: #01132B;
+}
+.wrapper .container {
+    padding: 27px 20px;
+}
+
+/**
+ * grid
+ */
+.grid {
+    border-bottom: 0 none;
+    padding-bottom: 0.5em;
+}
+.grid .name-tab {
+    background: none repeat scroll 0 0 #F95901;
+    padding: 4px 8px;
+}
+.grid .name-tab span {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+.grid table {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #CBD3D4 #CBD3D4 -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    width: 100%;
+}
+.grid tr.headings th {
+    border-color: #F9F9F9 #D1CFCF #F9F9F9 #F9F9F9;
+    background: none repeat scroll 0 0 #C6E2ED;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 0.9em;
+    padding-bottom: 0;
+    padding-top: 1px;
+}
+.grid table.border {
+    border: 1px solid #CBD3D4;
+}
+.grid tbody {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.grid th {
+    white-space: nowrap;
+}
+.grid th, .grid td {
+    padding: 2px 4px;
+}
+.grid tr.headings th a {
+    color: #7E9DB1;
+    display: block;
+    padding: 2px 4px 1px 0;
+    text-decoration: none;
+}
+.grid tr.headings th a:hover {
+    color: #F95901;
+    text-decoration: none;
+}
+.grid tr.even, .grid tr.even tr {
+    background: none repeat scroll 0 0 #F6F6F6;
+}
+.grid tr.on-mouse {
+    background: none repeat scroll 0 0 #FCF5DD;
+    cursor: pointer;
+}
+.grid tr.invalid {
+    background-color: #F5D6C7;
+}
+.grid th, .grid td {
+    padding: 2px 4px;
+}
+.grid th {
+    white-space: nowrap;
+}
+.grid td.editable input.input-text {
+    margin-left: 4px !important;
+    width: 50px !important;
+}
+.grid td input.input-text {
+    width: 86%;
+}
+.grid table td {
+    border-color: #DADFE0;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+}
+.grid table.border td {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+}
+.grid table td.last {
+    border-right: 0 none;
+}
+.grid table td.product {
+    text-align: right;
+}
+.grid table td.empty-text {
+    padding: 15px;
+}
+.grid table td .action-select {
+    width: 100%;
+}
+.grid .separator {
+    color: #B9B9B9;
+    padding: 0 4px;
+}
+.grid tbody.odd tr {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+}
+.grid tbody.even tr {
+    background: none repeat scroll 0 0 #F6F6F6 !important;
+}
+.grid tbody.odd tr td, .grid tbody.even tr td {
+    border-bottom: 0 none;
+}
+.grid tbody.odd tr.border td, .grid tbody.even tr.border td {
+    border-bottom: 1px solid #DADFE0;
+}
+table.actions {
+    margin: 0.5em 0;
+    width: 100%;
+}
+table.actions td {
+    vertical-align: top;
+}
+.pointer {
+    cursor: pointer;
+}
+.grid .options {
+    margin: 10px 8px;
+}

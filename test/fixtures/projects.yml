@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  remark: MyString
+  deadline: 2012-07-13 17:22:25
+  total_work_hours: 1
+  created: 2012-07-13 17:22:25
+  modified: 2012-07-13 17:22:25
+  created_by: 1
+  modified_by: 1
+
+two:
+  name: MyString
+  remark: MyString
+  deadline: 2012-07-13 17:22:25
+  total_work_hours: 1
+  created: 2012-07-13 17:22:25
+  modified: 2012-07-13 17:22:25
+  created_by: 1
+  modified_by: 1

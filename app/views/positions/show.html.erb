@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @position.name %>
+</p>
+
+<p>
+  <b>Remark:</b>
+  <%= @position.remark %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%= @position.created %>
+</p>
+
+<p>
+  <b>Modified:</b>
+  <%= @position.modified %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @position.created_by %>
+</p>
+
+<p>
+  <b>Modified by:</b>
+  <%= @position.modified_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_position_path(@position) %> |
+<%= link_to 'Back', positions_path %>

@@ -1,0 +1,45 @@
+<div class="grid">
+  <div class="name-tab"><span>Listing users</span></div>
+  <table>
+    <thead>
+      <tr class="headings">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Total work hours</th>
+        <th>Month work hours</th>
+        <th>Created</th>
+        <th>Modified</th>
+        <th>Created by</th>
+        <th>Modified by</th>
+        <th>Position</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do |user, index| %>
+      <tr <% if index%2==0 %>class="even pointer"<% else %>class="pointer"<% end %>>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.total_work_hours %></td>
+        <td><%= user.month_work_hours %></td>
+        <td><%= user.created %></td>
+        <td><%= user.modified %></td>
+        <td><%= user.created_by %></td>
+        <td><%= user.modified_by %></td>
+        <td><%= user.position.name %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <div class="options">
+    <ul class="">
+      <li class="lf"><%= link_to 'New User', new_user_path %></li>
+    </ul>
+  </div>
+</div>
+

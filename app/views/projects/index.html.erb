@@ -1,0 +1,42 @@
+<div class="grid">
+  <div class="name-tab"><span>Listing projects</span></div>
+  <table>
+    <thead>
+      <tr class="headings">
+        <th>Name</th>
+        <th>Remark</th>
+        <th>Deadline</th>
+        <th>Total work hours</th>
+        <th>Created</th>
+        <th>Modified</th>
+        <th>Created by</th>
+        <th>Modified by</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projects.each_with_index do |project, index| %>
+      <tr <% if index%2==0 %>class="even pointer"<% else %>class="pointer"<% end %>>
+        <td><%= project.name %></td>
+        <td><%= project.remark %></td>
+        <td><%= project.deadline %></td>
+        <td><%= project.total_work_hours %></td>
+        <td><%= project.created %></td>
+        <td><%= project.modified %></td>
+        <td><%= project.created_by %></td>
+        <td><%= project.modified_by %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="options">
+    <ul class="">
+      <li class="lf"><%= link_to 'New Project', new_project_path %></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Remark:</b>
+  <%= @project.remark %>
+</p>
+
+<p>
+  <b>Deadline:</b>
+  <%= @project.deadline %>
+</p>
+
+<p>
+  <b>Total work hours:</b>
+  <%= @project.total_work_hours %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%= @project.created %>
+</p>
+
+<p>
+  <b>Modified:</b>
+  <%= @project.modified %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @project.created_by %>
+</p>
+
+<p>
+  <b>Modified by:</b>
+  <%= @project.modified_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
