@@ -16,24 +16,14 @@
  * reset
  */
 html, body {
-    font-family: inherit;
-    font-size: 100%;
-    font-style: inherit;
-    font-weight: inherit;
-}
-body {
-    color: #222222; /* TODO 修改颜色 */
     font-family: "Helvetica Neue",Helvetica,Tahoma,Verdana,Arial,sans-serif;
-    font-size: 75%;
+    font-size: 14px;
     line-height: 1.5;
     margin: 0px;
+    color: #222222; /* TODO 修改颜色 */
 }
 div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, code, del, dfn, em, img, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, hr {
     border: 0 none;
-    font-family: inherit;
-    font-size: 100%;
-    font-style: inherit;
-    font-weight: inherit;
     margin: 0;
     padding: 0;
     vertical-align: baseline;
@@ -46,7 +36,6 @@ th {
 a {
     color: #EA7601; /* TODO 修改颜色 */
     text-decoration: underline;
-    font-weight: bold;
 }
 a:hover {
     color: #EA7601; /* TODO 修改颜色 */
@@ -94,6 +83,7 @@ a img {
     color: #FFFFFF;
     display: block;
     text-decoration: none;
+    font-weight: bold;
 }
 .nav a:hover {
     color: #f95901;
@@ -107,6 +97,7 @@ a img {
 }
 .wrapper .container {
     padding: 27px 20px;
+    background:url('/assets/bg.png') repeat-x scroll 0 0 #FFFFFF
 }
 
 /**
@@ -132,15 +123,16 @@ a img {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: #CBD3D4 #CBD3D4 -moz-use-text-color;
-    border-style: solid solid none;
-    border-width: 1px 1px medium;
+    border-style: none solid none;
+    border-width: 0px 1px medium;
+    border-collapse:collapse;
     width: 100%;
 }
 .grid tr.headings th {
-    border-color: #F9F9F9 #D1CFCF #F9F9F9 #F9F9F9;
+    border-color: #7E9DB1;
     background: none repeat scroll 0 0 #C6E2ED;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0 0 2px 0;
     font-size: 0.9em;
     padding-bottom: 0;
     padding-top: 1px;
@@ -154,9 +146,7 @@ a img {
 .grid th {
     white-space: nowrap;
 }
-.grid th, .grid td {
-    padding: 2px 4px;
-}
+
 .grid tr.headings th a {
     color: #7E9DB1;
     display: block;
@@ -193,7 +183,7 @@ a img {
 .grid table td {
     border-color: #DADFE0;
     border-style: solid;
-    border-width: 0 1px 1px 0;
+    border-width: 0 0 1px 0;
 }
 .grid table.border td {
     background: none repeat scroll 0 0 #FFFFFF !important;
@@ -238,4 +228,78 @@ table.actions td {
 }
 .grid .options {
     margin: 10px 8px;
+}
+
+
+/**
+ * view
+ */
+.view .split-line {
+    background: none repeat scroll 0 0 #F95901;
+    height: 2px;
+    margin: 0 0 5px;
+}
+.form-list {
+    border: 0 none !important;
+    width: auto;
+}
+.form-list td.label, .form-list td.value, .form-list td.value2, .form-list td.note, .form-list td.scope-label, .form-list td.use-default {
+    background: none repeat scroll 0 center transparent !important;
+    border: 0 none !important;
+    padding-bottom: 5px !important;
+    padding-left: 5px !important;
+    padding-top: 5px !important;
+}
+.form-list td.hidden {
+    background: none repeat scroll 0 center transparent !important;
+    border: 0 none !important;
+    padding: 0 !important;
+}
+
+.form-list td.label {
+    width: 200px;
+}
+.form-list td.label label {
+    display: block;
+    padding-right: 15px;
+    width: 185px;
+}
+.form-list td.value input.input-text, .form-list td.value textarea {
+    width: 274px;
+}
+.form-list td.value {
+    font-weight: bold;
+}
+.box, .entry-edit fieldset, .entry-edit .fieldset {
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #D6D6D6;
+}
+.box, .entry-edit fieldset, .entry-edit .fieldset {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+}
+.entry-edit .entry-edit-head {
+    background: none repeat scroll 0 0 #C6E2ED;
+    padding: 2px 10px;
+    border-color: #7E9DB1;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+}
+.entry-edit .entry-edit-head h4 {
+    background: none repeat scroll 0 0 transparent;
+    color: #000000;
+    font-size: 1em;
+    line-height: 18px;
+    margin: 0;
+    min-height: 0;
+    padding: 0;
+}
+.box-left, .box-right {
+    width: 48.5%;
+}
+.box-left {
+    float: left;
+}
+.box-right {
+    float: right;
 }

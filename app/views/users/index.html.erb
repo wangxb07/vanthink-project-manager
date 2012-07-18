@@ -5,13 +5,11 @@
       <tr class="headings">
         <th>Name</th>
         <th>Email</th>
+        <th>Position</th>
         <th>Total work hours</th>
         <th>Month work hours</th>
         <th>Created</th>
         <th>Modified</th>
-        <th>Created by</th>
-        <th>Modified by</th>
-        <th>Position</th>
         <th></th>
         <th></th>
         <th></th>
@@ -22,13 +20,11 @@
       <tr <% if index%2==0 %>class="even pointer"<% else %>class="pointer"<% end %>>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
+        <td><%= user.position.name %></td>
         <td><%= user.total_work_hours %></td>
         <td><%= user.month_work_hours %></td>
         <td><%= user.created %></td>
         <td><%= user.modified %></td>
-        <td><%= user.created_by %></td>
-        <td><%= user.modified_by %></td>
-        <td><%= user.position.name %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

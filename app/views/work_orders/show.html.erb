@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @work_order.content %>
+</p>
+
+<p>
+  <b>Remark:</b>
+  <%= @work_order.remark %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @work_order.status %>
+</p>
+
+<p>
+  <b>Work hours:</b>
+  <%= @work_order.work_hours %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%= @work_order.created %>
+</p>
+
+<p>
+  <b>Project phase:</b>
+  <%= @work_order.project_phase %>
+</p>
+
+
+<%= link_to 'Edit', edit_work_order_path(@work_order) %> |
+<%= link_to 'Back', work_orders_path %>

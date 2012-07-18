@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  content: MyString
+  remark: MyString
+  status: 1
+  work_hours: 1
+  created: 2012-07-18 15:08:19
+  project_phase: 
+
+two:
+  content: MyString
+  remark: MyString
+  status: 1
+  work_hours: 1
+  created: 2012-07-18 15:08:19
+  project_phase: 

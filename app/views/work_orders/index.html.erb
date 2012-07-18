@@ -1,0 +1,33 @@
+<h1>Listing work_orders</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>Remark</th>
+    <th>Status</th>
+    <th>Work hours</th>
+    <th>Created</th>
+    <th>Project phase</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @work_orders.each do |work_order| %>
+  <tr>
+    <td><%= work_order.content %></td>
+    <td><%= work_order.remark %></td>
+    <td><%= work_order.status %></td>
+    <td><%= work_order.work_hours %></td>
+    <td><%= work_order.created %></td>
+    <td><%= work_order.project_phase %></td>
+    <td><%= link_to 'Show', work_order %></td>
+    <td><%= link_to 'Edit', edit_work_order_path(work_order) %></td>
+    <td><%= link_to 'Destroy', work_order, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Work order', new_work_order_path %>

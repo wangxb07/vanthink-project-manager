@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
 
   has_many :followers
   has_many :projects, :through => :followers
+
+  def project_work_hours(project)
+    Follower.where("project_id = ? and user_id = ?", project.id, self.id).last.work_hours
+  end
 end

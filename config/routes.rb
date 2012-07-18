@@ -1,4 +1,6 @@
 ProjectsMgr::Application.routes.draw do
+  resources :work_orders
+
   resources :project_phases
 
   resources :projects
