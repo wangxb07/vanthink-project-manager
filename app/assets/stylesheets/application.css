@@ -101,20 +101,23 @@ a img {
 }
 
 /**
+ * block
+ */
+.block-header .split-line {
+    background: none repeat scroll 0 0 #F95901;
+    height: 2px;
+    margin: 0 0 5px;
+}
+.block-header h4 {
+    font-size: 18px;
+    color: #F95901;
+}
+/**
  * grid
  */
 .grid {
     border-bottom: 0 none;
     padding-bottom: 0.5em;
-}
-.grid .name-tab {
-    background: none repeat scroll 0 0 #F95901;
-    padding: 4px 8px;
-}
-.grid .name-tab span {
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
 }
 .grid table {
     -moz-border-bottom-colors: none;
@@ -146,7 +149,10 @@ a img {
 .grid th {
     white-space: nowrap;
 }
-
+.grid tr.on-mouse {
+    background: none repeat scroll 0 0 #FCF5DD;
+    cursor: pointer;
+}
 .grid tr.headings th a {
     color: #7E9DB1;
     display: block;
@@ -234,11 +240,6 @@ table.actions td {
 /**
  * view
  */
-.view .split-line {
-    background: none repeat scroll 0 0 #F95901;
-    height: 2px;
-    margin: 0 0 5px;
-}
 .form-list {
     border: 0 none !important;
     width: auto;
@@ -302,4 +303,44 @@ table.actions td {
 }
 .box-right {
     float: right;
+}
+
+/**
+ * form
+ */
+.form #error_explanation {
+    border-color: #7E9DB1;
+    background: none repeat scroll 0 0 #C6E2ED;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    font-size: 0.9em;
+    padding: 8px 15px;
+}
+.form #error_explanation ul {
+    margin: 5px 14px;
+    color: #F95901;
+}
+.form .fieldset {
+    margin-top: 20px;
+}
+.form .fieldset .field {
+    margin: 10px 0;
+}
+.form .fieldset .field .label {
+    font-size: 12px;
+}
+.form .fieldset .field input,select,textarea,checkbox {
+    font-size: 18px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    font-size: 16px;
+    padding: 6px;
+}
+.form .fieldset .field_with_errors input {
+    border-color: #F95901;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+}
+.form .fieldset .field textarea {
+    height: 160px;
 }

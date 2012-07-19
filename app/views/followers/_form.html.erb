@@ -1,6 +1,5 @@
 <%= form.fields_for :followers do |follower_form| %>
   <div class="field">
-    <%= follower_form.label :name, 'Follower:' %>
     <%= follower_form.select :user_id, [['Please select', '']] | User.all.collect { |user| [user.name, user.id] } %>
   </div>
   <% unless follower_form.object.nil? || follower_form.object.new_record? %>

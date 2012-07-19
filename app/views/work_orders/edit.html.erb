@@ -1,6 +1,10 @@
-<h1>Editing work_order</h1>
+<div class="edit-wrapper">
+  <div class="block-header">
+    <div><h4>Editing work_order</h4></div>
+    <div class="split-line"></div>
+  </div>
+  <%= render 'form' %>
+  <%= link_to 'Show', @work_order %> |
+  <%= link_to 'Back', work_orders_path %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @work_order %> |
-<%= link_to 'Back', work_orders_path %>

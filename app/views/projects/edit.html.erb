@@ -1,6 +1,9 @@
-<h1>Editing project</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<div class="edit-wrapper">
+  <div class="block-header">
+    <div><h4>Editing project</h4></div>
+    <div class="split-line"></div>
+  </div>
+  <%= render 'form' %>
+  <%= link_to 'Show', @project %> |
+  <%= link_to 'Back', projects_path %>
+</div>

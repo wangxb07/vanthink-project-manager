@@ -1,53 +1,37 @@
-<%= form_for(@user) do |f| %>
+<div class="form block">
+  <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
+  <div class="fieldset">
+    <div class="field">
+      <div class="label"><%= f.label :name %></div>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <div class="label"><%= f.label :email %></div>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <div class="label"><%= f.label :created %></div>
+      <%= f.datetime_select :created %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :total_work_hours %><br />
-    <%= f.number_field :total_work_hours %>
-  </div>
-  <div class="field">
-    <%= f.label :month_work_hours %><br />
-    <%= f.number_field :month_work_hours %>
-  </div>
-  <div class="field">
-    <%= f.label :created %><br />
-    <%= f.datetime_select :created %>
-  </div>
-  <div class="field">
-    <%= f.label :modified %><br />
-    <%= f.datetime_select :modified %>
-  </div>
-  <div class="field">
-    <%= f.label :created_by %><br />
-    <%= f.number_field :created_by %>
-  </div>
-  <div class="field">
-    <%= f.label :modified_by %><br />
-    <%= f.number_field :modified_by %>
-  </div>
-
-  <div class="field">
-    <%=f.select :position_id, [['Please select', '']] | Position.all.collect { |position| [position.name, position.id] } %>
+    <div class="field">
+      <div class="label"><%= f.label :position %></div>
+      <%=f.select :position_id, [['Please select', '']] | Position.all.collect { |position| [position.name, position.id] } %>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>

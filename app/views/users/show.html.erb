@@ -1,75 +1,82 @@
-<div class="view">
-  <div class="system-info">
-    <p id="notice"><%= notice %></p>
-  </div>
-  <div><h4>INFO</h4></div>
-  <div class="split-line"></div>
-  <div class="box-left">
-    <div class="entry-edit">
-      <div class="entry-edit-head">
-        <h4>User Base Info</h4>
-      </div>
-      <div class="fieldset">
-        <table class="form-list">
-          <tr>
-            <td class="label">Name:</td>
-            <td class="value"><%= @user.name %></td>
-          </tr>
-          <tr>
-            <td class="label">Email:</td>
-            <td class="value"><%= @user.email %></td>
-          </tr>
-          <tr>
-            <td class="label">Position:</td>
-            <td class="value"><%= @user.position.name %></td>
-          </tr>
-        </table>
+<div class="view-wrapper">
+  <div class="view block">
+    <div class="system-info">
+      <p id="notice"><%= notice %></p>
+    </div>
+    <div class="block-header">
+      <div><h4>User Info</h4></div>
+      <div class="split-line"></div>
+    </div>
+    <div class="box-left">
+      <div class="entry-edit">
+        <div class="entry-edit-head">
+          <h4>User Base Info</h4>
+        </div>
+        <div class="fieldset">
+          <table class="form-list">
+            <tr>
+              <td class="label">Name:</td>
+              <td class="value"><%= @user.name %></td>
+            </tr>
+            <tr>
+              <td class="label">Email:</td>
+              <td class="value"><%= @user.email %></td>
+            </tr>
+            <tr>
+              <td class="label">Position:</td>
+              <td class="value"><%= @user.position.name %></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="box-right">
-    <div class="entry-edit">
-      <div class="entry-edit-head">
-        <h4>Work Hours</h4>
-      </div>
-      <div class="fieldset">
-        <table class="form-list">
-          <tr>
-            <td class="label">Total work hours:</td>
-            <td class="value"><%= @user.total_work_hours %></td>
-          </tr>
-          <tr>
-            <td class="label">Month work hours:</td>
-            <td class="value"><%= @user.month_work_hours %></td>
-          </tr>
-          <tr>
-            <td class="label">Created:</td>
-            <td class="value"><%= @user.created %></td>
-          </tr>
-        </table>
+    <div class="box-right">
+      <div class="entry-edit">
+        <div class="entry-edit-head">
+          <h4>Work Hours</h4>
+        </div>
+        <div class="fieldset">
+          <table class="form-list">
+            <tr>
+              <td class="label">Total work hours:</td>
+              <td class="value"><%= @user.total_work_hours %></td>
+            </tr>
+            <tr>
+              <td class="label">Month work hours:</td>
+              <td class="value"><%= @user.month_work_hours %></td>
+            </tr>
+            <tr>
+              <td class="label">Created:</td>
+              <td class="value"><%= @user.created %></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
+    <div class="clearfix"></div>
   </div>
-  <div class="clearfix"></div>
+  <div class="grid block">
+    <div class="block-header">
+      <div><h4>Follow Projects</h4></div>
+      <div class="split-line"></div>
+    </div>
+    <table>
+      <thead>
+        <tr class="headings">
+          <th>Name</th>
+          <th>Work Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.projects.each_with_index do |project, index| %>
+        <tr <% if index%2==0 %>class="even pointer"<% else %>class="pointer"<% end %>>
+          <td><%= project.name %></td>
+          <td><%= @user.project_work_hours project %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
 </div>
-<div class="grid">
-  <div class="name-tab"><span>Follow Projects</span></div>
-  <table>
-    <thead>
-      <tr class="headings">
-        <th>Name</th>
-        <th>Work Hours</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user.projects.each_with_index do |project, index| %>
-      <tr <% if index%2==0 %>class="even pointer"<% else %>class="pointer"<% end %>>
-        <td><%= project.name %></td>
-        <td><%= @user.project_work_hours project %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

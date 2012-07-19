@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
                    :length => { :minimum => 2 }
   validates :deadline, :presence => true
 
+  has_many :project_phases
   has_many :followers
   has_many :users, :through => :followers
   accepts_nested_attributes_for :followers, :allow_destroy => :true,

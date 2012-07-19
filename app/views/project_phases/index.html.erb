@@ -1,27 +1,43 @@
-<h1>Listing project_phases</h1>
+<script type="text/javascript">
+$(document).ready(function() {$('.grid').vtgrid({})});
+</script>
+<div class="list-wrapper">
+  <div class="grid block">
+    <div class="block-header">
+      <div><h4>Listing project phases</h4></div>
+      <div class="split-line"></div>
+    </div>
+    <table>
+      <thead>
+        <tr class="headings">
+          <th>Name</th>
+          <th>Dead line</th>
+          <th>Project</th>
+          <th>Total work hours</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @project_phases.each_with_index do |project_phase, index| %>
+        <tr <% if index%2==0 %>class="even pointer"<% else %>class="pointer"<% end %>>
+          <td><%= project_phase.name %></td>
+          <td><%= project_phase.deadline %></td>
+          <td><%= project_phase.project.name %></td>
+          <td><%= project_phase.total_work_hours %></td>
+          <td><%= link_to 'Show', project_phase %></td>
+          <td><%= link_to 'Edit', edit_project_phase_path(project_phase) %></td>
+          <td><%= link_to 'Destroy', project_phase, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="options">
+      <ul class="">
+        <%= link_to 'New Project phase', new_project_phase_path %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Dead line</th>
-    <th>Project</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @project_phases.each do |project_phase| %>
-  <tr>
-    <td><%= project_phase.name %></td>
-    <td><%= project_phase.deadline %></td>
-    <td><%= project_phase.project %></td>
-    <td><%= link_to 'Show', project_phase %></td>
-    <td><%= link_to 'Edit', edit_project_phase_path(project_phase) %></td>
-    <td><%= link_to 'Destroy', project_phase, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Project phase', new_project_phase_path %>
