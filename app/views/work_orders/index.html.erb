@@ -1,6 +1,6 @@
-<script type="text/javascript">
-$(document).ready(function() {$('.grid').vtgrid({})});
-</script>
+<% content_for :header do %>
+<%= javascript_include_tag "jquery_vtgrid" %>
+<% end %>
 <div class="list-wrapper">
   <div class="grid block">
     <div class="block-header">

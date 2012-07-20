@@ -1,3 +1,6 @@
+<% content_for :header do %>
+<%= javascript_include_tag "work_orders_form" %>
+<% end %>
 <div class="form block">
   <%= form_for(@work_order) do |f| %>
   <% if @work_order.errors.any? %>
@@ -30,7 +33,11 @@
     </div>
     <div class="field">
       <div class="label"><%= f.label :project_phase %></div>
-      <%= f.select :project_phase_id, [['Please select', '']] | ProjectPhase.all.collect { |project_phase| [project_phase.project.name + "-" + project_phase.name, project_phase.id] } %>
+      <%= f.select :project_phase_id, [['Please select', '']] |
+                                      ProjectPhase.all.collect { |project_phase| [project_phase.project.name + "-" + project_phase.name, project_phase.id] } %>
+    </div>
+    <div id="user_select_field_container">
+
     </div>
     <div class="actions">
       <%= f.submit %>

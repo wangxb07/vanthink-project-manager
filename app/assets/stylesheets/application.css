@@ -47,7 +47,13 @@ a img {
 :focus {
     outline: 0 none;
 }
-
+input[type=text],input[type=number],textarea,checkbox,select,checkbox {
+    font-size: 18px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    font-size: 16px;
+    padding: 6px;
+}
 /**
  * base stylesheet
  */
@@ -329,14 +335,10 @@ table.actions td {
 .form .fieldset .field .label {
     font-size: 12px;
 }
-.form .fieldset .field input,select,textarea,checkbox {
-    font-size: 18px;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    font-size: 16px;
-    padding: 6px;
-}
-.form .fieldset .field_with_errors input {
+.form .fieldset .field_with_errors input,
+.form .fieldset .field_with_errors select,
+.form .fieldset .field_with_errors textarea,
+.form .fieldset .field_with_errors checkbox {
     border-color: #F95901;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
