@@ -1,0 +1,8 @@
+<div class="field">
+  <div class="field">
+    <div class="label"></div>
+    <%= select :work_order, :user_id, [['Please select', '']] |\
+                                      Follower.where('project_id=?', params['project_id']).\
+                                      collect { |follower| [follower.user.name, follower.user.id] } %>
+  </div>
+</div>
